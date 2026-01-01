@@ -1,0 +1,183 @@
+:root {
+    /* Primary */
+    --blue500: hsl(223, 87%, 63%);
+
+    /* Secondary */
+    --blue200: hsl(223, 100%, 88%);
+    --red400: hsl(354, 100%, 66%);
+
+    /* Neutral */
+    --gray400: hsl(0, 0%, 59%);
+    --blue950: hsl(209, 33%, 12%);
+    --blue05: hsla(209, 33%, 12%, 0.3);
+    --green: hsl(145, 63%, 42%);
+
+    font-size: 20px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    gap: 60px;
+    justify-items: center;
+    padding: 100px 20px;
+    font-family: "Libre Franklin", sans-serif;
+}
+
+header {
+    & > img {
+        height: 40px;
+    }
+}
+
+main {
+    width: 100%;
+    max-width: 700px;
+
+    & > .soon {
+        text-align: center;
+
+        & > h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: var(--gray400);
+
+            & > span {
+                font-weight: 700;
+                color: var(--blue950);
+            }
+        }
+
+        & > p {
+            color: var(--blue950);
+            margin: 20px 0;
+            font-weight: 300;
+        }
+
+        & > form {
+            display: flex;
+            gap: 25px;
+            position: relative;
+
+            & > input {
+                flex: 1;
+                border: 1px solid var(--gray400);
+                outline: none;
+                padding: 0 30px;
+                font-size: 0.8rem;
+            }
+
+            & > button {
+                width: 150px;
+                font-size: 0.8rem;
+                border: none;
+                outline: none;
+                background-color: var(--blue500);
+                font-weight: 600;
+                color: var(--blue200);
+                cursor: pointer;
+                box-shadow: 15px 15px 20px var(--blue05);
+            }
+
+            & > input,
+            & > button {
+                border-radius: 30px;
+                height: 60px;
+            }
+
+            & > p.error,
+            & > p.success {
+                width: 100%;
+                position: absolute;
+                top: 65px;
+                left: 30px;
+                font-size: 0.7rem;
+                text-align: left;
+            }
+
+            & > p.error {
+                color: var(--red400);
+            }
+
+            & > p.success {
+                color: var(--green);
+            }
+        }
+    }
+
+    & > img {
+        width: 100%;
+        margin-top: 60px;
+    }
+}
+
+footer {
+    display: grid;
+    justify-items: center;
+    gap: 20px;
+
+    & > .socials {
+        display: flex;
+        gap: 20px;
+
+        & > .app {
+            border: 1px solid var(--blue200);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+
+            & > img {
+                width: 15px;
+                height: 15px;
+            }
+        }
+    }
+
+    & > p {
+        color: var(--gray400);
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        & > img {
+            height: unset;
+        }
+    }
+
+    main {
+        & > .soon {
+            & > h1 {
+                font-size: 1.7rem;
+            }
+
+            & > form {
+                display: grid;
+                gap: 10px;
+                grid-template-columns: 1fr;
+
+                & > button {
+                    width: 100%;
+                    margin-top: 10px;
+                }
+
+                & > p.error,
+                & > p.success {
+                    position: relative;
+                    top: unset;
+                    left: unset;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
